@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <div class="generator-box">
+        <h1>PassGen Pro</h1>
+
+        <input
+            type="text"
+            id="passwordDisplay"
+            readonly
+            placeholder="Click Generate..."
+        >
+
+        <div class="options-group">
+            <h3>Format</h3>
+
+            <label>
+                <input type="radio" name="formatOption" value="hyphen" checked>
+                Hyphenated (word-word-word-word)
+            </label>
+
+            <label>
+                <input type="radio" name="formatOption" value="pascal">
+                PascalCase (WordWordWordWord)
+            </label>
+
+            <label>
+                <input type="radio" name="formatOption" value="none">
+                No Separator (wordwordwordword)
+            </label>
+
+            <hr>
+
+            <h3>Extras</h3>
+
+            <div class="option-row">
+                <label>
+                    <input type="checkbox" id="includeNumber">
+                    Include Number(s)
+                </label>
+                <input type="number" id="numberCount" min="0" max="4" value="1">
+            </div>
+
+            <div class="option-row">
+                <label>
+                    <input type="checkbox" id="includeSpecial">
+                    Include Special Character(s)
+                </label>
+                <input type="number" id="specialCount" min="0" max="4" value="1">
+            </div>
+
+            <div class="option-row">
+                <label for="maxLength">Max Length</label>
+                <input type="number" id="maxLength" min="8" max="50" value="24">
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button id="generateBtn">Generate Passphrase</button>
+            <button id="copyBtn">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
